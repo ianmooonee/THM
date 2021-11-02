@@ -1,0 +1,40 @@
+Once the browser knows the server's IP address, it can ask the server for the web page. This is done with a HTTP GET request. GET is an example of a HTTP verb, which are the different types of request (More on these later). The server will respond to the GET request with the web page content. If the web page is loading extra resources, like JavaScript, images, or CSS files, those will be retrieved in separate GET requests.
+
+For most websites now, these requests will use HTTPS. HTTPS is a secure (encrypted) version of HTTP, it works in more or less the same way. This uses TLS 1.3 (normally) encryption in order to communicate without:
+Other parties being able to read the data
+Other parties being able to modify the data
+
+POST requests are used to send data to a web server, like adding a comment or performing a login.
+
+Finally, body of the request. For POST requests, this is the content that's sent to the server. For GET requests, a body is allowed but will mostly be ignored by the server.
+
+A basic breakdown of the status codes is:
+100-199: Information
+200-299: Successes (200 OK is the "normal" response for a GET)
+300-399: Redirects (the information you want is elsewhere)
+400-499: Client errors (You did something wrong, like asking for something that doesn't exist)
+500-599: Server errors (The server tried, but something went wrong on their side)
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+Response headers can be very important. They can often tell you something about the web server sending them, or give you cookies that may prove useful later on.
+The response will also have a body. For GET requests, this is normally web content or information such as JSON. For POST requests, it may be a status message or similar.
+
+Cookies are small bits of data that are stored in your browser. Each browser will store them separately, so cookies in Chrome won't be available in Firefox. They have a huge number of uses, but the most common are either session management or advertising (tracking cookies). Cookies are normally sent with every HTTP request made to a server.
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+
+When you log in to a web application, normally you are given a Session Token. This allows the web server to identify your requests from someone else's. Stealing someone else's session token can often allow you to impersonate them.
+
+Using your browser's developer tools, you can view and modify cookies. In Firefox, you can open the dev tools with F12. In the Storage tab, you can see cookies that the website has set. There's also a "+" button to allow you to create your own cookies which will come in handy in a minute. You can modify all cookies that you can see in this panel, as well as adding more.
+
+Slowly, for some uses, LocalStorage and SessionStorage are used instead. This has a similar functionality but isn't sent with HTTP requests by default. These are HTML5 features.
+
+Intro to cURL
+By default, cURL will perform GET requests on whatever URL you supply it
+Using command line flags for cURL, we can do a lot more than just GET content. The -X flag allows us to specify the request type, eg -X POST. You can specify the data to POST with --data, which will default to plain text data. It's worth mentioning cURL does not store cookies, and you have to manually specify any cookies and values that you would like to send with your request. If you want to send cookies from cURL, you can look up how to do this.
+
+curl -X POST --data "flag_please" http://10.10.146.134:8081/ctf/post
+curl http://10.10.146.134:8081/ctf/get
+curl -c - http://10.10.146.134:8081/ctf/getcookie
+curl -v --cookie 'flagpls=flagpls' http://10.10.146.134:8081/ctf/sendcookie
