@@ -1,0 +1,63 @@
+nmap is one of the most important tools in a pen testers arsenal. It allows a pen tester to see which ports are open, and information about which services are running on those ports.
+
+Netcat aka nc is an extremely versatile tool. It allows users to connect to specific ports and send and receive data. It also allows machines to receive data and connections on specific ports, which makes nc a very popular tool to gain a Reverse Shell.
+After you connect to a port with nc you will be able to send data, this also has the consequence of the user being able to pipe data through nc. For example one can do echo hello | nc <ip> 1234 to send the string hello to the service running on port 1234
+
+One of the main problems of web penetration testing is not knowing where anything is. Basic reconnaissance can tell you where some files and directories are; however, some of the more hidden stuff is often hidden away from the eyes of users. This is where gobuster comes in, the idea behind gobuster is that it tries to find valid directories from a wordlist of possible directories. gobuster can also be used to valid subdomains using the same method.
+
+nikto is a popular web scanning tool that allows users to find common web vulnerabilities. It is commonly used to check for common CVE's such as shellshock, and to get general information about the web server that you're enumerating.
+
+https://www.offensive-security.com/metasploit-unleashed/meterpreter-basics/
+
+Often times during a pen test, you will gain access to a database. When you investigate the database you will often find a users table, which contains usernames and often hashed passwords. It is often necessary to know how to crack hashed passwords to gain authentication to a website(or if you're lucky a hashed password may work for ssh!).
+https://www.wired.com/2016/06/hacker-lexicon-password-hashing/
+
+No matter what tool you use, virtually all of them have the exact same format. A file with the hash(s) in it with each hash being separated by a newline.
+Example:
+<hash 1>
+<hash 2>
+<hash 3>
+Salts are typically appended onto the hash with a colon and the salt. Files with salted hashes still follow the same convention with each hash being separated by a newline.
+Example:
+<hash1>:<salt>
+<hash2>:<salt>
+<hash3>:<salt>
+Note: Different hashing algorithms treat salts differently. Some prepend them and some append them. Research what it is you're trying to crack, and make the distinction.
+https://en.wikipedia.org/wiki/Salt_(cryptography)
+
+hashcat is another one of the most popular hash cracking tools. It is renowned for its versatility and speed. Hashcat does not have auto detection for hashtypes, instead it has modes. For example if you were trying to crack an md5 hash the "mode" would be 0, while if you were trying to crack a sha1 hash, the mode would be 100.
+https://hashcat.net/wiki/doku.php?id=example_hashes
+
+John The Ripper(jtr) is one of the best hash cracking tools available. It supports numerous formats of hashes and is extremely easy to use, while having a lot of options for customization.
+
+SQL injection is the art of modifying a SQL query so you can get access to the target's database. This technique is often used to get user's data such as passwords, emails etc. SQL injection is one of the most common web vulnerabilities, and as such, it is highly worth checking for
+Sqlmap is arguably the most popular automated SQL injection tool out there. It checks for various types of injections, and has plenty of customization options.
+
+Occasionally you will be unable to use sqlmap. This can be for a variety of reasons, such as a the target has set up a firewall or a request limit. In this case it is worth knowing how to do basic manual SQL Injection, if only to confirm that there is SQL Injection. A list of ways to check for SQL Injection can be found here.
+Note: As there are various ways to check for sql injection, and it would be difficult to properly convey how to test for sqli given each situation, there will be no questions for this task.
+https://owasp.org/www-community/attacks/SQL_Injection
+
+Most of the pentesting techniques and tools you've seen so far can be used on both Windows and Linux. However, one of the things you'll find most often when pen testing Windows machines is samba, and it is worth making a section dedicated to enumerating it.
+Note: Samba is cross platform as well, however this section will primarily be focused on Windows enumeration; some of the techniques you see here still apply to Linux as well.
+
+Continuing with the trend of tools having "map" in the name being extremely popular, smbmap is one of the best ways to enumerate samba. smbmap allows pen-testers to run commands(given proper permissions), download and upload files, and overall is just incredibly useful for smb enumeration.
+
+smbclient allows you to do most of the things you can do with smbmap, and it also offers you and interactive prompt.
+
+impacket is a collection of extremely useful windows scripts. It is worth mentioning here, as it has many scripts available that use samba to enumerate and even gain shell access to windows machines. All scripts can be found here.
+https://github.com/SecureAuthCorp/impacket
+
+privilege escalation is such a large topic that it would be impossible to do it proper justice in this type of room. However, it is a necessary topic that must be covered, so rather than making a task with questions, I shall provide you all with some resources.
+
+General:
+https://github.com/swisskyrepo/PayloadsAllTheThings (A bunch of tools and payloads for every stage of pentesting)
+Linux:
+https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ (a bit old but still worth looking at)
+https://github.com/rebootuser/LinEnum (One of the most popular priv esc scripts)
+https://github.com/diego-treitos/linux-smart-enumeration/blob/master/lse.sh (Another popular script)
+https://github.com/mzet-/linux-exploit-suggester (A Script that's dedicated to searching for kernel exploits)
+https://gtfobins.github.io (I can not overstate the usefulness of this for priv esc, if a common binary has special permissions, you can use this site to see how to get root perms with it.)
+Windows:
+https://www.fuzzysecurity.com/tutorials/16.html  (Dictates some very useful commands and methods to enumerate the host and gain intel)
+https://github.com/PowerShellEmpire/PowerTools/tree/master/PowerUp (A bit old but still an incredibly useful script)
+https://github.com/411Hall/JAWS (A general enumeration script)
