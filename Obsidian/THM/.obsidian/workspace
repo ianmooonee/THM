@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "b7038b98c1cbd6c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "4d54d0885c896a5d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Attacking Kerberos Room.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8faa5c8d7a429d21",
+    "type": "split",
+    "children": [
+      {
+        "id": "bcac31e8a8325535",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4423639d4d4a5388",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4f6b37fc2551654f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "323196d7c6664ec7",
+    "type": "split",
+    "children": [
+      {
+        "id": "73cf2460914de4c5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "99946ee695ca5a38",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Attacking Kerberos Room.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "4d54d0885c896a5d",
+  "lastOpenFiles": [
+    "Attacking Kerberos Room.md"
+  ]
+}
