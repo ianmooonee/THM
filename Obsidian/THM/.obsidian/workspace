@@ -10,8 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Attacking Kerberos Room.md",
-            "mode": "source",
-            "source": false
+            "mode": "source"
           }
         }
       }
@@ -53,7 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 208
   },
   "right": {
     "id": "323196d7c6664ec7",
@@ -89,6 +88,9 @@
   },
   "active": "4d54d0885c896a5d",
   "lastOpenFiles": [
-    "Attacking Kerberos Room.md"
+    "Attacking Kerberos Room.md",
+    "Untitled.md",
+    "Alfred.md",
+    "Post-Exploitation Basics Room.md"
   ]
 }
