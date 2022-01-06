@@ -1,0 +1,17 @@
+POST /squirrelmail/src/redirect.php HTTP/1.1
+Host: 10.10.26.197
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 73
+Origin: http://10.10.26.197
+Connection: close
+Referer: http://10.10.26.197/squirrelmail/src/login.php
+Cookie: squirrelmail_language=en_US; SQMSESSID=hp61glst1j1ptgrhvkrt8u6sk7
+Upgrade-Insecure-Requests: 1
+DNT: 1
+Sec-GPC: 1
+
+login_username=asd&secretkey=asd&js_autodetect_results=1&just_logged_in=1
