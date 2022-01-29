@@ -1,0 +1,6 @@
+smb allows anonymous login to a share with base64 encrypted passwords:
+
+Bob - !P@$$W0rD!123
+Bill - Juw4nnaM4n420696969!$$$
+
+http://10.10.194.248:49663/nt4wrksv/passwords.txt -> can access on the webserver
